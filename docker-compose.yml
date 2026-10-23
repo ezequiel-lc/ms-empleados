@@ -1,0 +1,14 @@
+services:
+  spring-app:
+    build: .
+    container_name: spring-emp
+    ports:
+      - {PORT:PORT}
+    environment:
+      JAVA_TOOL_OPTIONS: {TIMEZONE}
+      TZ: "UTC"
+      SPRING_DATASOURCE_URL: {SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: {USERNAME}
+      SPRING_DATASOURCE_PASSWORD: {PASSWORD}
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.OracleDialect
+    depends_on: []
